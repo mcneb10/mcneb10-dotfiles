@@ -84,6 +84,7 @@
   (if require
       (require name)))
 
+;; TODO: make this work
 ;; Old vim habits die hard
 (defun open (path)
   "Open a file like vim"
@@ -181,6 +182,9 @@
 (package-idiom 'jupyter)
 (package-idiom 'chess)
 (package-idiom 'markdown-mode)
+(package-idiom 'powerline t)
+(powerline-default-theme)
+(package-idiom 'powerline-evil t)
 
 ;; Enable line numbers
 (global-display-line-numbers-mode t)
