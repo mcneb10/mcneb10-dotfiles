@@ -37,7 +37,8 @@
 
 ;; Set JAVA_HOME if it hasn't been already (change to your java home path)
 (unless (getenv "JAVA_HOME")
-  (setenv "JAVA_HOME" "/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/"))
+	(when (eq system-type 'darwin)
+  		(setenv "JAVA_HOME" "/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/")))
 (setq lsp-java-java-path (concat (getenv "JAVA_HOME") "/bin/java"))
 
 (unless (package-installed-p 'lsp-java)
